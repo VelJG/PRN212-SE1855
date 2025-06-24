@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp.ProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="ProductWindow" Height="450" Width="800">
+    <Grid>
+        <ListView Name="lvProduct"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="224,132,224,132" RenderTransformOrigin="0.521,0.463">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Product Id" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="Product Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Product Quantity" DisplayMemberBinding="{Binding Quantity}"/>
+                    <GridViewColumn Header="Product Price" DisplayMemberBinding="{Binding Price}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Product Id" HorizontalAlignment="Left" Margin="224,307,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="294,311,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="224,330,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="294,334,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Quantiy" HorizontalAlignment="Left" Margin="224,353,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtQuantity" HorizontalAlignment="Left" Margin="294,357,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Price" HorizontalAlignment="Left" Margin="224,376,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Margin="294,380,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnAddProduct" Content="Add product" HorizontalAlignment="Left" Margin="294,404,0,0" VerticalAlignment="Top" Width="120" Click="btnAddProduct_Click"/>
+
+    </Grid>
+</Window>
