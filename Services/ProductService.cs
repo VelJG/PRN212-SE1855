@@ -29,5 +29,13 @@ namespace Services
         {
             return _productRepository.SaveProducts(product);
         }
+        public bool UpdateProducts(Product product)
+        {
+            return _productRepository.UpdateProducts(product);
+        }
+        public bool DeleteProducts(Product product)
+        {
+            return _productRepository.DeleteProducts(product);
+        }
     }
 }

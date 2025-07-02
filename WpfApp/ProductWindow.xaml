@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="ProductWindow" Height="450" Width="800">
     <Grid>
-        <ListView Name="lvProduct"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="224,132,224,132" RenderTransformOrigin="0.521,0.463">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="199*"/>
+            <ColumnDefinition Width="601*"/>
+        </Grid.ColumnDefinitions>
+        <ListView Name="lvProduct"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="27,38,222,226" RenderTransformOrigin="0.521,0.463" Grid.Column="1" SelectionChanged="lvProduct_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Product Id" DisplayMemberBinding="{Binding Id}"/>
@@ -17,15 +21,17 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Product Id" HorizontalAlignment="Left" Margin="224,307,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="294,311,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="224,330,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="294,334,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Quantiy" HorizontalAlignment="Left" Margin="224,353,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtQuantity" HorizontalAlignment="Left" Margin="294,357,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Price" HorizontalAlignment="Left" Margin="224,376,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Margin="294,380,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnAddProduct" Content="Add product" HorizontalAlignment="Left" Margin="294,404,0,0" VerticalAlignment="Top" Width="120" Click="btnAddProduct_Click"/>
+        <Label Content="Product Id" HorizontalAlignment="Left" Margin="27,213,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="97,217,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="27,236,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="97,240,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Quantiy" HorizontalAlignment="Left" Margin="27,259,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="txtQuantity" HorizontalAlignment="Left" Margin="97,263,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Price" HorizontalAlignment="Left" Margin="27,282,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Margin="97,286,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Button x:Name="btnAddProduct" Content="Add product" HorizontalAlignment="Left" Margin="97,310,0,0" VerticalAlignment="Top" Width="120" Click="btnAddProduct_Click" Grid.Column="1"/>
+        <Button Grid.Column="1" x:Name="btnUpdateProduct" Content="Update product" Margin="97,335,384,0" VerticalAlignment="Top" Click="btnUpdateProduct_Click"/>
+        <Button Grid.Column="1" x:Name="btnDeleteProduct" Content="Delete product" HorizontalAlignment="Left" Margin="97,360,0,0" VerticalAlignment="Top" Width="120" Click="btnDeleteProduct_Click"/>
 
     </Grid>
 </Window>

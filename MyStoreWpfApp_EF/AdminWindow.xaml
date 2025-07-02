@@ -1,0 +1,33 @@
+﻿<Window x:Class="MyStoreWpfApp_EF.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyStoreWpfApp_EF"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="800">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Background="Gold" Height="50">
+            <Label Content="MyStore Management System" FontSize="30"/>
+        </StackPanel>
+        <WrapPanel DockPanel.Dock="Bottom" Height="30" Background="Black">
+            <Label Content="Made by: Vel" Foreground="White" />
+        </WrapPanel>
+        <TreeView x:Name="tvCategory" DockPanel.Dock="Left" Background="Blue" Foreground="White" Width="301" SelectedItemChanged="tvCategory_SelectedItemChanged">
+            
+        </TreeView>
+        
+        <DockPanel Background="Red">
+            <ListView Name="lvProduct"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,256" RenderTransformOrigin="0.521,0.463" Grid.Column="1">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Product Id" DisplayMemberBinding="{Binding ProductId}"/>
+                        <GridViewColumn Header="Product Name" DisplayMemberBinding="{Binding ProductName}"/>
+                        <GridViewColumn Header="Product Quantity" DisplayMemberBinding="{Binding UnitsInStock}"/>
+                        <GridViewColumn Header="Product Price" DisplayMemberBinding="{Binding UnitPrice}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+    </DockPanel>
+</Window>

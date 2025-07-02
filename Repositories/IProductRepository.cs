@@ -13,5 +13,6 @@ namespace Repositories
         public List<Product> GetProducts();
         public bool SaveProducts(Product product);
         public bool UpdateProducts(Product product);
+        public bool DeleteProducts(Product product);
     }
 }
